@@ -10,7 +10,7 @@ const SKILLS = [
   { name: 'Git / GitHub',    pct: 95, tag: 'DevOps'   },
 ]
 
-const TOOLS = ['Vite', 'Firebase', 'MySQL', 'GraphQL', 'Postman', 'Figma', 'Wamp', 'Vercel', 'Socket.io']
+const TOOLS = ['Vite', 'Firebase', 'MySQL', 'GraphQL', 'Postman', 'Figma', 'Wamp', 'Vercel', 'VSCode']
 
 function Bar({ name, pct, tag, delay, animate }) {
   const [go, setGo] = useState(false)

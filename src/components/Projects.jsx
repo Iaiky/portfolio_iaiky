@@ -2,52 +2,52 @@ import { useEffect, useRef } from 'react'
 
 const PROJECTS = [
   {
-    title: 'E-Commerce Platform',
-    desc:  'Application e-commerce complète avec panier temps réel, paiement Stripe, dashboard admin et gestion des stocks.',
-    tags:  ['React', 'Node.js', 'PostgreSQL', 'Stripe'],
-    year:  '2024',
-    status: 'Production',
-    demo: '#', code: '#',
+    title: 'PeakLab',
+    desc:  'Application e-commerce complète avec panier temps réel, dashboard admin et gestion des stocks.',
+    tags:  ['React', 'vite.js', 'firestore', 'tailwind.css'],
+    year:  '2026',
+    status: 'En ligne',
+    demo: 'https://peak-lab.vercel.app/', code: 'https://github.com/Iaiky/peakLab',
   },
   {
-    title: 'App de Gestion de Projets',
-    desc:  'Outil collaboratif avec drag & drop, notifications WebSocket et suivi de progression par équipe.',
-    tags:  ['React', 'Socket.io', 'MongoDB', 'Express'],
+    title: 'Honey of Madagascar',
+    desc:  'Site web de Honey of Madagascar, site vitrine et contact',
+    tags:  ['Html/css', 'PHP'],
     year:  '2024',
     status: 'Production',
-    demo: '#', code: '#',
+    demo: 'https://ageru.mg/HoneyRemake/Accueil.html', code: 'https://github.com/Iaiky/',
   },
   {
-    title: 'Dashboard Analytics',
-    desc:  'Tableau de bord avec visualisations dynamiques, rapports exportables PDF et alertes personnalisées.',
-    tags:  ['Vue.js', 'D3.js', 'FastAPI', 'PostgreSQL'],
+    title: 'Iaikitiana',
+    desc:  'Le portfolio de Iaikitiana Jean(moi-même)',
+    tags:  ['Vite.js', 'React', 'firestore'],
+    year:  '2026',
+    status: 'En ligne',
+    demo: 'https://portfolio-iaiky.vercel.app', code: 'https://github.com/Iaiky/portfolio_iaiky',
+  },
+  {
+    title: 'Libère toi',
+    desc:  'Plareforme en ligne pour les assistants virtuels en ligne',
+    tags:  ['Quasar.js', 'Vue.js'],
+    year:  '2023',
+    status: 'Production',
+    demo: '/', code: 'https://github.com/Iaiky/quasar-lib-re-toi.git',
+  },
+  {
+    title: 'Libère toi backend server',
+    desc:  'La partie backend authentication and CRUD opérations with express.js & phpMyAdmin',
+    tags:  ['Express.js', 'phpMyAdmin', 'Vercel'],
     year:  '2023',
     status: 'En ligne',
-    demo: '#', code: '#',
+    demo: '/', code: 'https://github.com/Iaiky/libere_toi_back.git',
   },
   {
-    title: 'API Microservices',
-    desc:  'Architecture distribuée avec auth JWT, rate limiting, documentation Swagger auto-générée et tests complets.',
-    tags:  ['Node.js', 'Docker', 'Redis', 'Jest'],
-    year:  '2023',
+    title: 'E-fandray',
+    desc:  'Interface de messagerie avec React',
+    tags:  ['React'],
+    year:  '2022',
     status: 'Open Source',
-    demo: '#', code: '#',
-  },
-  {
-    title: 'Blog Headless CMS',
-    desc:  'Blog Next.js avec génération statique, SEO optimisé et déploiement CI/CD automatisé.',
-    tags:  ['Next.js', 'Contentful', 'Vercel', 'MDX'],
-    year:  '2023',
-    status: 'En ligne',
-    demo: '#', code: '#',
-  },
-  {
-    title: 'Chat Temps Réel',
-    desc:  'Messagerie instantanée avec rooms, partage de fichiers, historique chiffré et notifications push.',
-    tags:  ['React', 'Socket.io', 'MongoDB'],
-    year:  '2024',
-    status: 'En ligne',
-    demo: '#', code: '#',
+    demo: '/', code: 'https://github.com/Iaiky/react_E-fandray.git',
   },
 ]
 
@@ -107,13 +107,23 @@ function ProjectCard({ p, delay }) {
       <div className="border-t border-[#1e1e2e] pt-3.5 mt-auto flex justify-between items-center">
         <span className="text-[0.75rem] text-slate-600 font-mono">{p.year}</span>
         <div className="flex gap-4">
-          <a href={p.demo} className="inline-flex items-center gap-1.5 text-[0.78rem] text-violet-400 font-medium hover:text-violet-300 transition-colors">
+          <a 
+            href={p.demo} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="inline-flex items-center gap-1.5 text-[0.78rem] text-violet-400 font-medium hover:text-violet-300 transition-colors"
+          >
             <svg width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
               <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
             </svg>
             Démo
           </a>
-          <a href={p.code} className="inline-flex items-center gap-1.5 text-[0.78rem] text-slate-500 font-medium hover:text-slate-300 transition-colors">
+          <a 
+            href={p.code} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-[0.78rem] text-slate-500 font-medium hover:text-slate-300 transition-colors"
+          >
             <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
             </svg>

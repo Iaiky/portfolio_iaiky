@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import emailjs from '@emailjs/browser'
 
 function Field({ label, as: Tag = 'input', ...props }) {
   return (
@@ -55,20 +56,29 @@ export default function Contact() {
       [e.target.name]: e.target.value,
     }))
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault()
-
     setStatus('loading')
 
-    setTimeout(() => {
-      setStatus('done')
+    try {
+      await emailjs.send(
+        'service_7lh3fya',     // ex: 'service_abc123'
+        'template_4lm5h2d',    // ex: 'template_xyz456'
+        {
+          from_name: form.name,
+          from_email: form.email,
+          message: form.message,
+        },
+        'mPpNZ4uIBMjlR76BJ'      // ex: 'aBcDeFgHiJkLmN'
+      )
 
-      setForm({
-        name: '',
-        email: '',
-        message: '',
-      })
-    }, 1600)
+      setStatus('done')
+      setForm({ name: '', email: '', message: '' })
+
+    } catch (error) {
+      console.error('Erreur EmailJS:', error)
+      setStatus('error')
+    }
   }
 
   return (
@@ -313,6 +323,11 @@ export default function Contact() {
                   )}
                 </button>
               </form>
+            )}
+            {status === 'error' && (
+              <p className="text-center text-sm text-red-400">
+                Une erreur est survenue. Réessayez ou contactez-moi directement par email.
+              </p>
             )}
           </div>
         </div>
