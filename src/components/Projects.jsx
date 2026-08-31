@@ -7,7 +7,7 @@ const PROJECTS = [
     tags:  ['React', 'vite.js', 'firestore', 'tailwind.css'],
     year:  '2026',
     status: 'En ligne',
-    demo: 'https://peak-lab.vercel.app/', code: 'https://github.com/Iaiky/peakLab',
+    demo: 'https://peak-lab-test.vercel.app/', code: 'https://github.com/Iaiky/peakLab',
   },
   {
     title: 'Honey of Madagascar',
